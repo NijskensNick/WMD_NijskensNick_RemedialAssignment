@@ -26,6 +26,9 @@ app.use("/StandingStillPairs", ssPairsRouter);
 var ptPairsRouter = require("./routes/pt_pairs");
 app.use("/PassingThroughPairs", ptPairsRouter);
 
+var sessionsRouter = require("./routes/sessions");
+app.use("/Sessions", sessionsRouter);
+
 // Listening message
 app.listen(SERVER_PORT, (err) => {
     if(!err)
