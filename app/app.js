@@ -20,6 +20,9 @@ app.use("/LoggedDeviceNames", devicenamesRouter);
 var usernamesRouter = require("./routes/usernames");
 app.use("/LoggedUserNames", usernamesRouter);
 
+var ssPairsRouter = require("./routes/ss_pairs");
+app.use("/StandingStillPairs", ssPairsRouter);
+
 // Listening message
 app.listen(SERVER_PORT, (err) => {
     if(!err)
