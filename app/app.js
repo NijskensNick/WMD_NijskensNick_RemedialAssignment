@@ -23,6 +23,9 @@ app.use("/LoggedUserNames", usernamesRouter);
 var ssPairsRouter = require("./routes/ss_pairs");
 app.use("/StandingStillPairs", ssPairsRouter);
 
+var ptPairsRouter = require("./routes/pt_pairs");
+app.use("/PassingThroughPairs", ptPairsRouter);
+
 // Listening message
 app.listen(SERVER_PORT, (err) => {
     if(!err)
