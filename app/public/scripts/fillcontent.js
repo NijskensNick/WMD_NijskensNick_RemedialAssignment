@@ -7,6 +7,39 @@ window.onload = () => {
         ptTime: 0
     }
 
+    let piechartTestData = {
+        sessionTime: 50000,
+        ssTime: 4793,
+        ptTime: 2980
+    }
+
+    // Fill piechart
+    function FillPieChart(deviceName)
+    {
+        document.getElementById("piechart-name").innerHTML = ` ${deviceName}`;
+        document.getElementById("piechart-chart").innerHTML = `<canvas id="piechart-canvas"></canvas>`;
+        let data = piechartData;
+        console.log(data);
+        if(data.sessionTime == 0)
+        {
+            return;
+        }
+        let canvas = document.getElementById("piechart-canvas");
+        let values = [(100 - ((data.ssTime + data.ptTime) / data.sessionTime) * 100), (data.ssTime / data.sessionTime * 100), (data.ptTime / data.sessionTime * 100)];
+        let labels = ["Correct positioning", "Not allowed to stand still", "Not allowed to stand still or pass through"];
+        let colors = ["green", "yellow", "red"];
+        var chart = new Chart(canvas, {
+            type: "pie",
+            data: {
+                labels: labels,
+                datasets: [{
+                    backgroundColor: colors,
+                    data: values
+                }]
+            }
+        });
+    }
+
     // Fetch functions
     async function FetchStandingStillPairs(deviceName)
     {
@@ -67,7 +100,7 @@ window.onload = () => {
                     <th>Delete</th>
                 </tr>`;
             data.forEach((obj) => {
-                if(obj.ended && deviceName != "all"){
+                if(obj.ended){
                     piechartData.ssTime += (Date.parse(obj.endTime) - Date.parse(obj.startTime));
                 }
                 HTMLstring += 
@@ -102,7 +135,7 @@ window.onload = () => {
                     <th>Delete</th>
                 </tr>`;
             data.forEach((obj) => {
-                if(obj.ended && deviceName != "all"){
+                if(obj.ended){
                     piechartData.ptTime += (Date.parse(obj.endTime) - Date.parse(obj.startTime));
                 }
                 HTMLstring += 
@@ -137,7 +170,7 @@ window.onload = () => {
                     <th>Delete</th>
                 </tr>`;
             data.forEach((obj) => {
-                if(obj.ended && deviceName != "all"){
+                if(obj.ended){
                     piechartData.sessionTime += (Date.parse(obj.endTime) - Date.parse(obj.startTime));
                 }
                 HTMLstring += 
@@ -182,7 +215,7 @@ window.onload = () => {
             document.getElementById("UsernamesContent").innerHTML = HTMLstring;
             AddUsernameDeleteEvents();
         })
-        .then(() => {console.log(piechartData)})
+        .then(FillPieChart(deviceName))
     }
     function FillTables(deviceName){
         FillStandingStillTable(deviceName);
