@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.use(express.static("public"));
+
 
 // Routes
 var devicenamesRouter = require("./routes/devicenames");
@@ -28,6 +30,9 @@ app.use("/PassingThroughPairs", ptPairsRouter);
 
 var sessionsRouter = require("./routes/sessions");
 app.use("/Sessions", sessionsRouter);
+
+var adminpageRouter = require("./routes/adminpage");
+app.use("/", adminpageRouter);
 
 // Listening message
 app.listen(SERVER_PORT, (err) => {
