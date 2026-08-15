@@ -29,7 +29,7 @@ exports.getDeviceNames = async (req, res) => {
         }
 }
 exports.postDeviceName = async (req, res) => {
-    console.log(req.body);
+    try {
      if(await collection_devicenames.findOne({deviceName: String(req.body.deviceName)}))
         {
             res.status(400).send('Bad request: device already exists');
@@ -40,6 +40,12 @@ exports.postDeviceName = async (req, res) => {
             console.log("Added device " + String(result.insertedId));
             res.send("Added device name: " + String(result.insertedId));
         })
+    } catch (err) {
+        console.error(err);
+    } finally {
+        client.close();
+    }
+    
 }
 exports.deleteDeviceName = async (req, res) => {
     try {

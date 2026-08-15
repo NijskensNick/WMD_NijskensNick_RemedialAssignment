@@ -17,6 +17,9 @@ app.use(cors());
 var devicenamesRouter = require("./routes/devicenames");
 app.use("/LoggedDeviceNames", devicenamesRouter);
 
+var usernamesRouter = require("./routes/usernames");
+app.use("/LoggedUserNames", usernamesRouter);
+
 // Listening message
 app.listen(SERVER_PORT, (err) => {
     if(!err)
