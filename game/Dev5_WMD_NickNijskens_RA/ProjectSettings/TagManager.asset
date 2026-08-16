@@ -9,6 +9,8 @@ TagManager:
   - SausageBox
   - Furnace
   - Customer
+  - LeavePoint
+  - WaitingSpot
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Interactable_Environment
-  - 
-  - 
+  - Customer
+  - Transparent_Environment
   - 
   - 
   - 
