@@ -34,12 +34,12 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Code of conduct
 
-View the code of conduct (CODE_OF_CONDUCT)
+View the [code of conduct](CODE_OF_CONDUCT)
 
 ## Contribution guideline
 
-View the contribution guideline (CONTRIBUTING)
+View the [contribution guideline](CONTRIBUTING)
 
 ## Changelog
 
-View the changes of the project (CHANGELOG)
+View the [changes of the project](CHANGELOG)

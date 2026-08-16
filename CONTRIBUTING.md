@@ -54,10 +54,10 @@ For security vulnerabilities, please use the project's private security reportin
 
 ## Code of Conduct
 
-Please be respectful and constructive when interacting with other contributors. (CODE_OF_CONDUCT)
+Please be respectful and constructive when interacting with other contributors. [Code of conduct](CODE_OF_CONDUCT)
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the same license as the project, unless otherwise stated. (LICENSE)
+By contributing to this project, you agree that your contributions will be licensed under the same license as the project, unless otherwise stated. [MIT License](LICENSE)
 
 Thank you for helping improve the project!
