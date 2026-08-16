@@ -40,8 +40,7 @@ public class Tracker_PassThrough : MonoBehaviour
 
     public void StartTracking()
     {
-        trackingPair = new PassingThroughPair();
-        trackingPair.userName = logs.username;
+        trackingPair = new PassingThroughPair(logs.username);
         // change username
         StartCoroutine(PostPassThroughPair("localhost:3000/PassingThroughPairs"));
         isTracking = true;
