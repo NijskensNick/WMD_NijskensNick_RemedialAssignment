@@ -38,8 +38,7 @@ public class Tracker_StandingStill : MonoBehaviour
 
     public void StartTracking()
     {
-        trackingPair = new StandingStillPair();
-        trackingPair.userName = logs.username;
+        trackingPair = new StandingStillPair(logs.username);
         // change username
         StartCoroutine(PostStandingStillPair("localhost:3000/StandingStillPairs"));
         isTracking = true;

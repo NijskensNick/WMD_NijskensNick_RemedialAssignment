@@ -12,7 +12,7 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     volumes:
       - ./app:/usr/app
-      - server-v-node-modules:/app/node_modules
+      - app-v-node-modules:/usr/app/node_modules
     depends_on:
       - db
   db:
@@ -28,7 +28,7 @@ services:
       - database-v:/data/db
 
 volumes:
-  server-v-node-modules:
-    name: "server-v-node-modules"
+  app-v-node-modules:
+    name: "app-v-node-modules"
   database-v:
     name: "database-v"
