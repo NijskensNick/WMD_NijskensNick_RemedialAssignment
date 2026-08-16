@@ -20,7 +20,7 @@ To get started with the project, follow these steps:
     docker-compose up --build
     ```
 
-3. Run the `Dev5-WMD-NickNijskens_RA.exe` file in the `game_build` map to play the game
+3. Run the `Dev5_WMD_NickNijskens_RA.exe` file in the `game_build` map to play the game
 
 4. Open the admin panel by browsing to localhost:3000 in your browser
 
